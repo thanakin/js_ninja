@@ -45,12 +45,12 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `quantidadePessoas` - Number - zero por padrão
 */
 var carro = {
-    marca: '',
-    modelo: '',
-    placa: '',
-    ano: 0,
-    cor: '',
-    quantasPortas: '',
+    marca: 'Fiat',
+    modelo: 'Strada',
+    placa: 'AAA-0000',
+    ano: 2007,
+    cor: 'Vermelho',
+    quantasPortas: '2',
     assentos: 5,
     quantidadePessoas: 0
 }
@@ -90,26 +90,69 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-    return 'Este carro é um ' + carro.obterMarca + ' ' + carro.obterModelo;
+    return 'Este carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo() + '.';
 }
 
 /*
-Crie um método que irá adicionar pessoas no carro. Esse método terá as
-seguintes características:
-- Ele deverá receber por parâmetro o número de pessoas entrarão no carro. Esse
-número não precisa encher o carro, você poderá acrescentar as pessoas aos
-poucos.
-- O método deve retornar a frase: "Já temos [X] pessoas no carro!"
-- Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
-deve retornar a frase: "O carro já está lotado!"
-- Se ainda houverem lugares no carro, mas a quantidade de pessoas passadas por
-parâmetro for ultrapassar o limite de assentos do carro, então você deve
-mostrar quantos assentos ainda podem ser ocupados, com a frase:
-"Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
-- Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
-citado acima, no lugar de "pessoas".
+Crie um método que irá adicionar pessoas no carro. Esse método terá asseguintes características:
+- Ele deverá receber por parâmetro o número de pessoas entrarão no carro. Esse número não precisa encher o carro, 
+você poderá acrescentar as pessoas aos poucos.
+-- O método deve retornar a frase: "Já temos [X] pessoas no carro!"
+-- Se o carro já estiver cheio, com todos os assentos já preenchidos, o método deve retornar a frase: "O carro já está lotado!"
+- Se ainda houverem lugares no carro, mas a quantidade de pessoas passadas por parâmetro for ultrapassar o limite de assentos do carro, 
+então você deve mostrar quantos assentos ainda podem ser ocupados, com a frase: "Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
+- Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno citado acima, no lugar de "pessoas".
 */
-?
+
+//assentos: 5,
+//quantidadePessoas: 0
+var carro = {
+    marca: '',
+    modelo: '',
+    placa: '',
+    ano: 0,
+    cor: '',
+    quantasPortas: '',
+    assentos: 5,
+    quantidadePessoas: 0
+}
+
+carro.remPessoas = function(y){
+    carro.quantidadePessoas = carro.quantidadePessoas - y;
+    return 'Agora temos '+ carro.quantidadePessoas + ' pessoa(s) no carro!'
+}
+
+carro.addPessoas = function(x){
+    if (x + carro.quantidadePessoas < carro.assentos) {
+        carro.quantidadePessoas = carro.quantidadePessoas + x;
+    } else if (x + carro.quantidadePessoas == carro.assentos) {
+        return 'O carro já está lotado!';
+    } else if (x + carro.quantidadePessoas > carro.assentos) {
+        return 'Ulrapassou a capacidade!';
+    }
+    return 'Já temos '+ carro.quantidadePessoas + ' pessoa(s) no carro!'
+}
+
+/*
+carro.addPessoas = function(x){
+    if(carro.quantidadePessoas == carro.assentos){
+        return 'O carro já está lotado!';
+    }
+
+    if ((carro.quantidadePessoas < carro.assentos)) {
+        carro.quantidadePessoas = carro.quantidadePessoas + x;
+    }
+    /*
+    if(x + carro.quantidadePessoas > carro.assentos) {
+        return 'Só cabem mais ' + (carro.quantidadePessoas - carro.assentos) + ' pessoas!';
+        } else if ((carro.quantidadePessoas < carro.assentos)) {
+            carro.quantidadePessoas = carro.quantidadePessoas + x;
+            } else {
+                return 'O carro já está lotado!';
+                }  
+                * /
+    return 'Já temos '+ carro.quantidadePessoas + ' pessoa(s) no carro!'
+}*/
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -119,22 +162,22 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obter; //undefined
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudaCor('vermelho'); //undefined
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); //'vermelho'
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudaCor('verde musgo'); //undefined
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); //'verde musgo'
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo(); //'Este carro é um Fiat Strada.'
 
 // Adicione 2 pessoas no carro.
 ?
