@@ -27,22 +27,22 @@ segundo parâmetro.
 function novaFuncao(arrai, indice){
     return arrai[indice];
 }
-meuarray = [727, 737, 777, 787];
+meuArray = [727, 737, 777, 787];
 
-novaFuncao(meuarray, 0); //727
+novaFuncao(meuArray, 0); //727
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var minhavar = [ 727, 3.14, 'Thanakin', true, undefined ];
+var minhaVar = [ 727, 3.14, 'Thanakin', true, undefined ];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último array criado.
 */
-novaFuncao(minhavar, 0); //727
-novaFuncao(minhavar, 1); //3.14
-novaFuncao(minhavar, 2); //'Thanakin'
-novaFuncao(minhavar, 3); //true
-novaFuncao(minhavar, 4); //undefined
+novaFuncao(minhaVar, 0); //727
+novaFuncao(minhaVar, 1); //3.14
+novaFuncao(minhaVar, 2); //'Thanakin'
+novaFuncao(minhaVar, 3); //true
+novaFuncao(minhaVar, 4); //undefined
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do livro. 
@@ -57,27 +57,23 @@ Dentro dessa função, declare uma variável que recebe um objeto com as seguint
 */
 function book(nomeLivro){
     var objeto = {
-        livro1: {
+        'livro1': {
             quantidadePaginas: 100,
             autor: 'Qui Gon Jin',
             editora: 'Skywalker'
             },
-        livro2: {
+        'livro2': {
                 quantidadePaginas: 200,
                 autor: 'Obi Wan Kenobi',
                 editora: 'Skywalker'
             },
-        livro3: {
+        'livro3': {
                 quantidadePaginas: 300,
                 autor: 'Anakin Skywalker',
                 editora: 'Skywalker'
             }
     }
-    if(nomeLivro === ''){
-        return objeto.nomeLivro;
-    } else {
-        return objeto;
-    }
+    return !nomeLivro ? objeto : objeto[nomeLivro];
 }
 
 /*
@@ -111,27 +107,16 @@ book().livro1.editora;
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer, usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-book.paginas = function(){
-    return 'O livro '+ book.livro1 +' tem '+book.objeto.paginas+' páginas!';
-    //return 'O livro '+ book.livro +' tem '+book.objeto.paginas+' páginas!'; //return 'O livro '+ book.livro +' tem '+ book.livro.quantidadePaginas +' páginas!';
-}
-book.paginas = function(){
-    return 'O livro '+ book.livro1;
-}
-book.paginas(); //'O livro undefined'
+var nomeLivro = 'livro1';
+'O livro '+ nomeLivro +' tem '+ book( nomeLivro).quantidadePaginas +' páginas!';
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-book.autor = function(livro){
-    return 'O autor do livro '+ book.livro +' é '+book.objeto.autor+'.'
-}
+'O autor do livro '+ nomeLivro +' é '+ book( nomeLivro ).autor +' páginas!';
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-
-book.editora = function(editora){
-    return 'O livro '+ book.livro +' foi publicado pela editora '+ book.objeto.editora +'.';
-}
+'O livro '+ nomeLivro +' foi publicado pela editora '+ book( nomeLivro ).editora +'.';
