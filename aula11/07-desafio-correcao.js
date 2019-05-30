@@ -19,9 +19,9 @@
     */
     var person = {
         name: 'Thanakin Skywalker',
-        age: '12',
-        weight: '80',
-        birthday: '02-11'
+        age: 12,
+        weight: 80,
+        birthday: '02/11'
     }
 
     /*
@@ -30,10 +30,12 @@
     Aproveite e crie uma variável `counter` que vai contar quantas propriedades esse objeto tem.
     Após o loop, mostre a frase: 'The person has [COUNTER] properties'
     */
+    counter =0;
     for( var prop in person ){
         console.log( 'The '+ prop +' of person is '+person[prop] );
+        counter++;
     }
-    //console.log( person['age'] );
+    console.log( 'The person has '+ counter +' properties' );
 
     /*
     Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto criado acima) 
@@ -42,10 +44,8 @@
     Após a função, mostrar a mensagem no console: 'The person has more than 25 years old? [TRUE/FALSE]'
     */
     function moreThan(idade){
-        if ( person['age'] > idade ){
-            return true;
-        }
-        return false;
+        //return person['age'] > idade ? true : false;
+        return person['age'] > idade;
     }
     console.log( 'The person has more than 25 years old?', moreThan(12) );
 
@@ -54,13 +54,12 @@
     Se o contador for maior que 10, saia do loop. Mostre no console os números no array.
     */
     console.log( 'De 0 a 10:' );
-    var counter = 0;
     var numbers = [];
-    for( var i=0; i < 20; i++){
+    for( var i=0; i < 20; i++ ) {
         if ( i > 10) {
             break;
         }
-        numbers.push(i);
+        numbers.push( i );
     }
     console.log( numbers );
     
@@ -69,13 +68,12 @@
     Se o número for ímpar, pular para o próximo número. Mostrar no console os números do array.
     */
     console.log( 'Pares de 0 a 20:' );
-    var counter = 0;
     var numbers = [];
-    for( var i=0; i <= 20; i++){
-        if ( i % 2 !=0) {
+    for( var i=0; i <= 20; i++ ){
+        if ( i % 2 === 0 ) {
             continue;
         }
-        numbers.push(i);
+        numbers.push( i );
     }
     console.log( numbers );
 })();
