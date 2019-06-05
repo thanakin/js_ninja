@@ -47,7 +47,7 @@
         //return person['age'] > idade ? true : false;
         return person['age'] > idade;
     }
-    console.log( 'The person has more than 25 years old?', moreThan(12) );
+    console.log( 'The person has more than 25 years old?', moreThan( 12 ) );
 
     /*
     Faça um loop de 0 a 20, que adicione cada número como um item de um array chamado `numbers`. 
