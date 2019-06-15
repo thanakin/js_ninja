@@ -20,9 +20,9 @@
 (function(){
 
     'use strict';
-    console.log( 'Thanakin'.length);
+    console.log( 'Thanakin'.length); // retorna o tamanho da string
     console.log( '\n' );
-    console.log( 'Thanakin'.charAt(0)); // retorna o tamanho da string
+    console.log( 'Thanakin'.charAt(0));  //retorna a letra no indice informado
     console.log( '\n' );
     console.log( 'Thanakin'[0]); //retorna a letra no indice informado
     console.log( '\n' );
@@ -31,7 +31,7 @@
     console.log( '\n' );    
     console.log( nome.indexOf( 'k' ) ); // retorna posição da letra dentro da string e -1 se não existir
     console.log( '\n' );    
-    console.log( nome.lastIndexOf( 'k' ) ); // igual o anterir, mas iniciando do final da string
+    console.log( nome.lastIndexOf( 'k' ) ); // igual o anterior, mas iniciando do final da string
     console.log( '\n' );    
     console.log( nome.replace( 'a', '4' ) ); // substitui trecho da string por outro trecho
     console.log( '\n' );    
@@ -39,7 +39,7 @@
     console.log( '\n' );    
     console.log( nome.slice( 2, 5 ) ); // corta parte da string, retornando-a em uma string secundaria
     console.log( '\n' );    
-    console.log( nome.split( 'n' ) ); // corta a instring conforme parametro informado
+    console.log( nome.split( 'n' ) ); // corta a string conforme parametro informado
     var nome2 = nome.split( 'n' );
     console.log( '\n' );    
     console.log( nome2.join( 'n' ) ); 
